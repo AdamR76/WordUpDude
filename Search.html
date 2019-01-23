@@ -1,20 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131290540-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131290540-1');
+</script>
+
     <link href="../css/reset.css" rel="stylesheet" type="text/css">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="../wordup/resources/images/Icon-Small.png" sizes="16x16" type="image/png">
+    <!--FontAwesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <!--Bootstrap CDN-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <meta charset="utf-8">
     <title>WordUp Dude Search</title>
   </head>
-  <body class="search">
+  <body class="body">
     <!--NavBar Begins -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav class="navbar navbar-expand-lg bg-light">
   <a class="navbar-brand" href="#"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -24,7 +37,7 @@
     <ul class="navbar-nav mr-auto">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Word Up Dude <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="search.html">Word Lookup</a>
@@ -41,20 +54,75 @@
     </header>
     <!-- Navbar ends-->
     <!-- Form Begins -->
-    <div class="container-fluid">
-    <form action="/cgi-bin/Dude.py" name="custom_query" method="post" class="text-center" id="custom_query" >
-        <fieldset>
-          <legend>Find Your Words</legend>
-            <p>Words begin with: <input type="text" name="beginswith"/></p>
-            <p>Words will contain: <input type="text" name="willcontain"/></p>
-            <p>Omit these letters: <input type="text"  name="omit"/></p>
-            <p class="form">Words end with: <input class="end" type="text" name="endswith"/></p>
-            <p class="formword">Word length (2-15): <input type="number" name="wordlength" min="2" max="15" required></p><br />
-            <input type="submit" name="Submit" />
-        </fieldset>
+    <div class="container search">
+      <form action="/cgi-bin/Dude.py" name="custom_query" method="post" class="text-center" id="custom_query">
+        <legend class="mb-3 heading">Find Your Words</legend>
+        <div class="input-group input-group-lg mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Words begin with: </span>
+          </div>
+          <input type="text" class="form-control" name="beginsWith" placeholder="Begins With">
+        </div>
+        <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Words will contain: </span>
+            </div>
+            <input type="text" class="form-control" name="willContain" placeholder="Will Contain">
+        </div>
+        <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Omit These Letters: </span>
+            </div>
+            <input type="text" class="form-control" name="omitThese" placeholder="Omit These">
+        </div>
+        <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Words End With: </span>
+            </div>
+            <input type="text" class="form-control" name="endsWith" placeholder="Ends With">
+        </div>
+        <div class="input-group input-group-lg mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Words that contain the phrase: </span> </span>
+          </div>
+          <input type="text" class="form-control" name="containPhrase" placeholder="Contain Phrase" minlength="2" required>
+      </div>
+        <div class="input-group input-group-lg mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Minimum Word Length: </span>
+          </div>
+          <input type="number" class="form-control" name="minWordLength" min="2" value="2" required>
+      </div>
+      <div class="input-group input-group-lg mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Maximum Word Length: </span>
+        </div>
+        <input type="number" class="form-control" name="maxWordLength" placeholder="15" max="15"required>
+    </div>
+        <div class="input-group input-group-lg mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Maximum Number of Returned Words </span>
+          </div>
+          <input type="number" class="form-control" name="maxReturnedWords" max="5000" value="200"required>
+      </div>
+        <div class="input-group">
+          <input type="Submit" class="btn btn-lg" id="submit-button">
+        </div>
       </form>
     </div>
-<!--Form ends-->
+
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-m-12 col-sm-12">
+              <span>&copy;Dudeware Software</span>
+              <span>Design by Adam Robinson</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
 
 
 <!-- Bootstrap, Jquery -->

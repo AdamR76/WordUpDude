@@ -1,68 +1,41 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131290540-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <link href="./css/reset.css" rel="stylesheet" type="text/css">
-    <link href="./css/style.css" rel="stylesheet" type="text/css">
+  gtag('config', 'UA-131290540-1');
+</script>
+<!--CSS Links-->
+    <link href="../css/reset.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="../images/Icon-Small.png" type="image/png">
+    <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-
+<!--FontAwesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
       integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
       crossorigin="anonymous">
 
-
+<!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Oxygen" rel="stylesheet">
     <meta name="description" content="A fun and exciting word game to play with family and friends.">
     <title>WordUp Dude</title>
-
-
-    <!-- JavaScript -->
-    <script>
-
-
-
-    document.addEventListener("DOMContentLoaded",
-        function() {
-            var div, n,
-                v = document.getElementsByClassName("youtube-player");
-            for (n = 0; n < v.length; n++) {
-                div = document.createElement("div");
-                div.setAttribute("data-id", v[n].dataset.id);
-                div.innerHTML = Thumb(v[n].dataset.id);
-                div.onclick = Iframe;
-                v[n].appendChild(div);
-            }
-        });
-
-    function Thumb(id) {
-        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
-            play = '<div class="play"></div>';
-        return thumb.replace("ID", id) + play;
-    }
-
-    function Iframe() {
-        var iframe = document.createElement("iframe");
-        var embed = "https://www.youtube.com/embed/ID?autoplay=1";
-        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
-        iframe.setAttribute("frameborder", "0");
-        iframe.setAttribute("allowfullscreen", "1");
-        this.parentNode.replaceChild(iframe, this);
-    }
-
-  </script>
-
   </head>
-
-
-  <body>
+  <body class="body">
 
     <!--Navigation for site-->
 
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="menu">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top" id="menu">
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -71,7 +44,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#Home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#Home">Word Up Dude<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#Tutorial">Tutorial</a>
@@ -116,162 +89,174 @@
   </div>
 
   <!--Tutorial Section-->
+  <div id="Tutorial"></div>
   <div class="youtube-player" data-id="sLB0kPCeAIk"></div>
 
-      <!--How to Play, Strategy and Scoring Section-->
-      <div class="container-fluid">
-        <div id="How-to-Play">
-          <h2 class="text-center">How to Play</h2>
-        </div>
-          <p class="explain">Starting with 5 letters in your rack, beat the clock by making free format words that all connect in the space above the tile rack. All two letter and larger words down or across must be valid words.
+  <!--How to Play-->
+  <div class="container">
+    <div id="How-to-Play">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center heading">How to Play</h2>
+          <p class="text-center card-text">Starting with 5 letters in your rack, beat the clock by making free format words that all connect in the space above the tile rack. All two letter and larger words down or across must be valid words.
             When all tiles have been used, select the <strong>"Check"</strong> button to get two additional tiles, and a bonus 10 seconds.
             If you cannot use all letters, select <strong>"Help"</strong> to get 2 additional tiles to use. You do not get bonus time. Select letters by touching them with your finger and sliding the letter to a location desired.
             Letters will retreat to their original location if not placed in a legal space. Move the board itself if you need room to add letters by touching the board, and sliding it up, down, left, or right.
             If you don't like the letters, you can select <strong>"Quit"</strong> at any time, and return to the game selection page. If you <strong>"Quit"</strong> a "Challenge game", you will score the words made to that point, but forfeit any time bonus.</p>
-            <div id="Scoring">
-            <h2 class="text-center">Scoring</h2>
           </div>
-            <p class="explain">Scoring is a combination of word length, and letter value, with a bonus given for the number of seconds left when the game has been completed. A score is awarded for each unique word made during the life
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="Scoring">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center heading">Scoring</h2>
+          <p class="text-center card-text">
+              Scoring is a combination of word length, and letter value, with a bonus given for the number of seconds left when the game has been completed. A score is awarded for each unique word made during the life
               of the game. If you make the word 'dog' you will not receive additional points by making it again, but you would make additional points by changing the word to 'God'. Letter tiles do not need to remain in their initial position after each play.
-              If you <strong>"quit"</strong> a "Challenge game", you will score the words made to that point, but forfeit any time bonus.</p>
-            <!--Table for Scoring-->
-              <div class="row">
-                <div class="col-lg-6 col-xl-6 col-m-6 col-sm-12 col-xs-6">
-                  <table class="points">
-                    <tr>
-                      <th>Letters</th>
-                      <th class="value">Point Value</th>
-                    </tr>
-                    <tr>
-                      <td>A, E, I, L, N, O, R, S, T</td>
-                      <td class="value"> 1</td>
-                    </tr>
-                    <tr>
-                      <td>D, G, U</td>
-                      <td> 2</td>
-                    </tr>
-                    <tr>
-                      <td>B, F, H, M, P, W, Y</td>
-                      <td> 3</td>
-                    </tr>
-                    <tr>
-                      <td>C, V</td>
-                      <td> 4</td>
-                    </tr>
-                    <tr>
-                      <td>K, X</td>
-                      <td> 5</td>
-                    </tr>
-                    <tr>
-                      <td>J</td>
-                      <td> 6</td>
-                    </tr>
-                    <tr>
-                      <td>Z</td>
-                      <td> 8</td>
-                    </tr>
-                    <tr>
-                    <td>Q</td>
-                    <td> 10</td>
-                  </tr>
-                </table>
-                </div>
-      <!--        <div class="col-lg-4 col-xl-4 col-m-6 col-sm-12 col-xs-12">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <Indicators>
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                    <li data-target="#myCarousel" data-slide-to="4"></li>
-                    <li data-target="#myCarousel" data-slide-to="5"></li>
-                  </ol>
-  <Wrapper for slides>
-                  <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                      <img class="d-block img-fluid"  src="https://image.ibb.co/dYcD9H/biggy1.png" alt="biggy1" border="0">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block img-fluid" src="https://image.ibb.co/joCPGx/biggy2.png" alt="Slide 2">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block img-fluid" src="https://image.ibb.co/cNEjYc/biggy3.png" alt="Slide 3">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block img-fluid" src="https://image.ibb.co/fwnhKH/biggy4.png" alt="Slide 4">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block img-fluid" src="https://image.ibb.co/jrND9H/biggy5.png" alt="Slide 5">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block img-fluid" src="https://image.ibb.co/km9FOc/biggy6.png" alt="Slide 6">
-                    </div>
-                  </div>
-  <Left and right controls>
-                  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-              </div>-->
+              If you <strong>"quit"</strong> a "Challenge game", you will score the words made to that point, but forfeit any time bonus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Table For Letter Point Values-->
+  <div class="row text-center" id="table">
+    <div class="col-lg-6">
+      <table class="table table-hover bg-white">
+        <thead>
+          <tr>
+            <th class="table-header" scope="col">Letters</th>
+            <th class="table-header" scope="col">Point Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">A, E, I, L, N, O, R, S, T</th>
+            <th>1</th>
+          </tr>
+          <tr>
+            <th scope="row">D, G, U</th>
+            <th>2</th>
+          </tr>
+          <tr>
+            <th scope="row">B, F, H, M, P, W, Y</th>
+            <th>3</th>
+          </tr>
+          <tr>
+            <th scope="row">C, V</th>
+            <th>4</th>
+          </tr>
+          <tr>
+            <th scope="row">K, X</th>
+            <th>5</th>
+          </tr>
+          <tr>
+            <th scope="row">J</th>
+            <th>6</th>
+          </tr>
+          <tr>
+            <th scope="row">Z</th>
+            <th>8</th>
+          </tr>
+          <tr>
+            <th scope="row">Q</th>
+            <th>10</th>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+    <!--Table For Word Length Multiplier-->
+    <div class="col-lg-6">
+        <table class="table table-hover bg-white">
+          <thead>
+            <tr>
+              <th class="table-header" scope="col">Word Length</th>
+              <th class="table-header" scope="col">Multiplier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">2</th>
+              <th>1</th>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <th>1</th>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <th>2</th>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <th>3</th>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <th>4</th>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <th>5</th>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <th>6</th>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <th>7</th>
+              </tr>
+            <!-- <tr>
+              <th scope="row">Example: first turn <br />
+                letters = AHERA Make: <br />
+                'Hear' and 'Ha' connected <br />
+                with the 'H'.</th>
+              <th>'Hear' + 'Ha' = <br />
+                (3+1+1+1)*2 + (3+1) = 16</th>
+            </tr> -->
+          </tbody>
+        </table>
+    </div>
+  </div>
 
-                <!-- Table for word Multiplier-->
-            <div class="col-lg-6 col-xl-6 col-m-6 col-sm-12 col-xs-12">
-                <table class="text-center">
-                  <tr>
-                    <th>Word Length</th>
-                    <th>Multiplier</th>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>3</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>4</td>
-                  </tr>
-                  <tr>
-                  <td>7</td>
-                  <td>5</td>
-                </tr>
-                  <tr>
-                    <td>Example: first turn <br />
-                      letters = AHERA Make: <br />
-                      'Hear' and 'Ha' connected <br />
-                      with the 'H'.
-                    </td>
-                    <td>'Hear' + 'Ha' = <br />
-                      (3+1+1+1)*2 + (3+1) = 16
-                    </td>
-                  </tr>
-              </table>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+            <img class="card-img"src="https://image.ibb.co/dYcD9H/biggy1.png" alt="biggy1" border="0">
+            <p class="card-text">Example: first turn letters = gorof <br /><strong>Make:</strong>
+              'Frog' and 'Go' connected
+              with the 'G'.</p>
+              <p class="card-text">'Frog' + 'Go' = <br />
+                (3+1+1+2)*2 + (2+1) = 17</p>
           </div>
         </div>
       </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <!--   Strategy   -->
-            <div id="Strategy">
-              <h2 class="text-center">Strategy</h2>
+      <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+                <img class="card-img"src="https://image.ibb.co/joCPGx/biggy2.png" alt="biggy1" border="0">
+                <p class="card-text">Example: second turn letters = d, e <br /><strong>Make:</strong> Forge' and 'God' connected
+                  with the 'G'.</p>
+                  <p class="card-text">'Forge' + 'God' = <br />
+                    (3+1+1+2+1)*2 + (2+1+2) = 21</p>
+              </div>
             </div>
-              <p class="explain">The two main components to scoring are the creation of unique words, and the time bonus.
+          </div>
+    </div>
+  </div>
+  <!--Strategy Section-->
+  <div class="container">
+    <div class="row">
+      <div id="Strategy">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="text-center card-title heading">Strategy</h2>
+            <p class="card-text">The two main components to scoring are the creation of unique words, and the time        bonus.
                 Since time allowed is increased by the 10 seconds when you successfully use all letters on the board,
                 this helps you increase your score and gives you more time to make creative and high scoring words. Since
                 you score for each new unique word created, minor changes to an existing word can reap additional score.
@@ -281,47 +266,63 @@
                 of the score in progress based on the numbers of letters successfully played.</p>
           </div>
         </div>
-        <div class="container-fluid game-modes">
-          <div class="row">
-            <div class="col-lg-12">
-              <div id="Game-Modes">
-                <h2 class="text-center">Game Modes</h2>
-              </div>
-              <h5>Solo Games</h5>
-                <p class="explain">Solo games can be played by selecting the 2 or 3 minute game from the Main Menu, though the 2 minute game is considered the standard game, and always used in competitive play.  Try to use all letters available before the clock time is exhausted.  The scoring rules above apply, and if your game is in the top 20 of games played it is saved as a high score.
-                  The solo games can be played offline with no connection to the internet.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-                <h5>Competitive Games</h5>
-                <p class="explain">Word Up Dude is an incredible competition game.  Unlike in Scrabble where one player might get better letters than another, the contestants in Word Up Dude battle on a level playing field.  Each player gets the exact same letters in the exact same sequence and must creatively figure a way to get more points than their opponent.  It is amazing how many possible ways there are to use just 15 letters in 6 turns.  There are three ways to compete with others in Word Up Dude.  They are described below.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <h5>Random Challenge</h5>
-              <p>This challenge is initiated from the Online Menu.  Select <strong>"Random Challenge"</strong> and after a countdown, the game will begin.  Play just as you would a standard 2 minute game.  When completed, you may be presented with the results of the challenge, if the other player has already finished, and you can see who won.  This is the only type of challenge that affects your ranking.  If you win the challenge, your rank will go up, while your opponents goes down.  The degree to which it rises depends on how you are currently ranked.  If you beat a much more highly ranked player, it may go up a lot.  If you beat a lower ranked player, it will not go up nearly as much.  If the other player has not finished, you can either wait, or find the results at a later time in <strong>"Recent Games"</strong> on the Online Menu.  This will highlight if there are games whose results you have not seen yet.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <h5>Challenge a Friend</h5>
-              <p class="explain">Also selected from the Online Menu, in this match, you challenge someone specifically.  It may be a friend, or someone that you see has played online.  First add them as a friend, and then challenge them.  Again, you will play a standard 2 minute game, and the challenge will immediately go out to the friend.  When complete, you can see your score, and once the friend has played, find the results in <strong>"Recent Games"</strong>.  As these are "friendly" matches, they do not affect your ranking.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <h5>Daily Challenges</h5>
-              <p class="explain">Another form of competition is the daily challenges.  From the Daily Challenges Menu, you will always take part in the <strong>"Daily Challenge"</strong>.  This match is open to everyone that plays Word Up Dude and allows you to pit yourself against all other players competing with the same letter set.  After you have played the game, you will be able to see the results of the other players who have competed.  Here is a good place to learn from the masters, and you can review their games, and see where you might have improved, or perhaps you will be the daily champ, and have your name immortalized in the Daily Challenge Archives.  Check back during the day to see how you have fared against the world.
-              You can also create your own Daily Challenge.  From the Daily Challenges Menu, select <strong>"Create/Edit a Challenge"</strong>.  Follow the instructions to name the challenge and specify the players that you want to include in the challenge.  Each day your group can compete to see who is the "daily winner".  The results of your challenges will be archived for a period of time.</p>
-            </div>
-          </div>
+      </div>
+    </div>
+  </div>
+  <!--Game Modes-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center card-title heading" id="Game-Modes">Game Modes</h2>
+          <p class="text-center card-text">Check out all the different game modes!</p>
         </div>
       </div>
+      </div>
+    </div>
+        <div class="row">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center game-header">Solo Games</h4>
+            <p class="text-center card-text">Solo games can be played by selecting the 2 or 3 minute game from the Main Menu, though the 2 minute game is considered the standard game, and always used in competitive play.  Try to use all letters available before the clock time is exhausted.  The scoring rules above apply, and if your game is in the top 20 of games played it is saved as a high score.
+                The solo games can be played offline with no connection to the internet.</p>
+        </div>
+      </div>
+      <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center game-header">Competitive Games</h4>
+            <p class="text-center card-text">Word Up Dude is an incredible competition game.  Unlike in Scrabble where one player might get better letters than another, the contestants in Word Up Dude battle on a level playing field.  Each player gets the exact same letters in the exact same sequence and must creatively figure a way to get more points than their opponent.  It is amazing how many possible ways there are to use just 15 letters in 6 turns.  There are three ways to compete with others in Word Up Dude.  They are described below.</p>
+        </div>
+      </div>
+      <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center game-header">Challenge a Friend</h4>
+            <p class="text-center card-text">Also selected from the Online Menu, in this match, you challenge someone specifically.  It may be a friend, or someone that you see has played online.  First add them as a friend, and then challenge them.  Again, you will play a standard 2 minute game, and the challenge will immediately go out to the friend.  When complete, you can see your score, and once the friend has played, find the results in <strong>"Recent Games"</strong>.  As these are "friendly" matches, they do not affect your ranking.</p>
+        </div>
+      </div>
+  </div>
+    <div class="row">
+       <div class="card">
+          <div class="card-body">
+              <h4 class="card-title text-center game-header">Random Challenge</h4>
+              <p class="text-center card-text">This challenge is initiated from the Online Menu.  Select <strong>"Random Challenge"</strong> and after a countdown, the game will begin.  Play just as you would a standard 2 minute game.  When completed, you may be presented with the results of the challenge, if the other player has already finished, and you can see who won.  This is the only type of challenge that affects your ranking.  If you win the challenge, your rank will go up, while your opponents goes down.  The degree to which it rises depends on how you are currently ranked.  If you beat a much more highly ranked player, it may go up a lot.  If you beat a lower ranked player, it will not go up nearly as much.  If the other player has not finished, you can either wait, or find the results at a later time in <strong>"Recent Games"</strong> on the Online Menu.  This will highlight if there are games whose results you have not seen yet.</p>
+        </div>
+      </div>
+      <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-center game-header">Daily Challenge</h4>
+            <p class="text-center card-text">Another form of competition is the daily challenges.  From the Daily Challenges Menu, you will always take part in the <strong>"Daily Challenge"</strong>.  This match is open to everyone that plays Word Up Dude and allows you to pit yourself against all other players competing with the same letter set.  After you have played the game, you will be able to see the results of the other players who have competed.  Here is a good place to learn from the masters, and you can review their games, and see where you might have improved, or perhaps you will be the daily champ, and have your name immortalized in the Daily Challenge Archives.  Check back during the day to see how you have fared against the world.
+              You can also create your own Daily Challenge.  From the Daily Challenges Menu, select <strong>"Create/Edit a Challenge"</strong>.  Follow the instructions to name the challenge and specify the players that you want to include in the challenge.  Each day your group can compete to see who is the "daily winner".  The results of your challenges will be archived for a period of time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+        
     <!-- Footer Section -->
     <footer>
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-xl-12 col-lg-12 col-m-12 col-sm-12">
             <span>&copy;Dudeware Software</span>
@@ -330,8 +331,11 @@
         </div>
       </div>
     </footer>
+
+    <!--Bootstrap JavaScript/Jquery CDN-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
   </body>
 </html>
