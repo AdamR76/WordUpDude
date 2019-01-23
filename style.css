@@ -3,6 +3,15 @@
   width: 100%;
 }
 
+.body  {
+  background: linear-gradient(#def2fa, #71bade);
+}
+
+.card {
+  box-shadow: 2px 2px #027AF2;
+  margin: .5rem;
+  background: linear-gradient(#ede4d5, #ffc182);
+}
 
 .explain {
   font-family: 'Oxygen', sans-serif;
@@ -19,21 +28,20 @@
 
 /* Navigation Style */
 
+.nav-link {
+  color: #027AF2;
+}
+
+.nav-link:hover {
+  color: #f78f20;
+  transition-duration: .5s;
+}
 
 /* Main Header Google Play link */
 
 #Home {
   margin-top: 4.5rem;
-
 }
-/* Possible Header Layout
-#Home h1{
-  font-family: 'Cinzel', serif;
-  align-content: center;
-  font-size: 5rem;
-  font-weight: bold;
-  }
-End Possible Header Layout */
 
 
   #Home p {
@@ -42,7 +50,7 @@ End Possible Header Layout */
     margin  : .2rem .1rem;
     width   : 1em;
     border-radius: .35rem;
-    box-shadow: .25rem black;
+    box-shadow: 4px 4px #027AF2;
     text-align: center;
     font-family: 'Oxygen', sans-serif;
     align-content: center;
@@ -81,7 +89,7 @@ End Possible Header Layout */
      position: relative;
      padding-bottom: 56.23%;
      /* Use 75% for 4:3 videos */
-     height: 0;
+     height: 80%;
      overflow: hidden;
      max-width: 100%;
      background: #000;
@@ -117,7 +125,7 @@ End Possible Header Layout */
  }
 
  .youtube-player img:hover {
-     -webkit-filter: brightness(75%);
+     filter: brightness(75%);
  }
 
  .youtube-player .play {
@@ -138,9 +146,6 @@ End Possible Header Layout */
 }
 
 #Tutorial h1  {
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  font-size: 3rem;
   margin-bottom: 1.5rem;
   margin-top: 4rem;
 }
@@ -150,7 +155,7 @@ End Possible Header Layout */
   padding-top: 3.5rem;
 }
 
-#How-to-Play h2 {
+.heading {
   font-family: 'Cinzel', serif;
   font-weight: bold;
   font-size: 3rem;
@@ -163,86 +168,40 @@ End Possible Header Layout */
   padding-top: 3.4rem;
 }
 
-#Scoring h2 {
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  font-size: 3rem;
-
-}
 
 /*   Strategy     */
 
 #Strategy {
   padding-top: 3.4rem;
+  margin-bottom: 2rem;
 }
 
-#Strategy h2  {
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  font-size: 3rem;
 
-}
 /* Table Styles */
+#table  {
+  margin-top: 2rem;
+}
 
+table {
+  box-shadow: 2px 2px #027AF2;
+  cursor: pointer;
+  background: linear-gradient(#ede4d5, #ffc182);
+}
 
-th {
-  font-size: 1rem;
+.table-header  {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
   font-weight: bold;
-  text-align: center;
 }
-
-table, th, td  {
-  border: 1px;
-  border-color: rgb(212, 213, 215);
-  border-style: solid;
-  font-family: 'Oxygen', sans-serif;
-}
-
-td, th {
-  padding: .25rem;
-  text-align: center;
-}
-
-.value  {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
-}
-
-
-.points {
-text-align: center;
-}
-
-/* Media Rules for table/carousel Section */
-@media screen and (max-width: 480px) {
-  #myCarousel {
-    display: none;
-  }
-  .points {
-    margin-bottom: 1rem;
-    margin-left: 1.5rem;
-  }
-}
-
 
 
 /* Game Modes */
 
-#Game-Modes h2  {
+
+
+.game-header  {
   font-family: 'Cinzel', serif;
   font-weight: bold;
-  font-size: 3rem;
-  padding-top: 3.3rem;
-}
-
-.game-modes h5  {
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  margin-top: 2rem;
-}
-
-.game-modes p {
-  font-family: 'Oxygen', sans-serif;
 }
 
 /* Competitive Games */
@@ -268,7 +227,15 @@ footer  {
 
 /* Search Page */
 
-
 form  {
-  padding-top: 7rem;
+  padding-top: 4rem;
+}
+
+.search {
+  width: 80%;
+  height: 50rem;
+}
+#submit-button  {
+  width: 100%;
+  background: linear-gradient(#ede4d5, #ffc182);
 }
